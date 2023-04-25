@@ -6,45 +6,45 @@ if [ -z $dateid ]; then
 fi
 
 # subscription name or subscription ID
-subscription="Azure bengui"
+subscription="2b86d076-9834-487f-93c1-12500049c3e6"
 
 # storage account name where the bits are made available for the setup scripts
-stor1=db27up34
+stor1=db2bits2
 
 # Admin password for the `adwin` accoun on the Window VM
-adwinPassword="BHxutbsp82________"
+adwinPassword="M@dd0x01"
 
 # Azure region where everything will be deployed
-location="westeurope"
+location="eastus"
 
 # local folder where the db2OnAzure git folder is cloned
-localGitFolderpath=/mnt/c/dev/GitHub/benjguin
+localGitFolderpath=/home/dcalland
 
 # Linux Integration Services v4.2 for Hyper-V and Azure bits. The minor version may change so the bits are made available to the scripts with a generic minro version of `x`.
-lisbitsgenericfilename=lis-rpms-4.2.x.tar.gz
+lisbitsgenericfilename=lis-rpms-4.3.5.x86_64.tar.gz
 
 # Db2 setup file
-db2bitsfilename=v11.1_linuxx64_server_t.tar.gz
+db2bitsfilename=v11.5.8_linuxx64_universal_fixpack.tar.gz
 
 #allows to use other url 
 if [ -z $lisbits ]; then
     # Shared access signature to access the LIS bits
-    lisbitssas=`az storage blob generate-sas --account-name $stor1 --container-name "setup" --policy-name "readuntileofcy2020" --name "$lisbitsgenericfilename" --output tsv`
+    lisbitssas=`az storage blob generate-sas --account-name $stor1 --container-name "setup" --policy-name "readuntileofcy2023" --name "$lisbitsgenericfilename" --output tsv`
     # Full URL where scripts can access the LIS bits
     lisbits="https://${stor1}.blob.core.windows.net/setup/${lisbitsgenericfilename}?${lisbitssas}"  
 fi
 if [ -z $db2bits ]; then
     # Shared access signature to access the Db2 bits
-    db2bitssas=`az storage blob generate-sas --account-name $stor1 --container-name "setup" --policy-name "readuntileofcy2020" --name "$db2bitsfilename" --output tsv`
+    db2bitssas=`az storage blob generate-sas --account-name $stor1 --container-name "setup" --policy-name "readuntileofcy2023" --name "$db2bitsfilename" --output tsv`
     # Full URL where scripts can access the Db2 bits
     db2bits="https://${stor1}.blob.core.windows.net/setup/${db2bitsfilename}?${db2bitssas}"
 fi
 
 # URL of the GitHub repo where all this code is made available
-githubRepoCloneUrl=git@github.com:benjguin/db2onAzure.git
+githubRepoCloneUrl=git@github.com:Azure/db2-on-azure.git
 
 # raw path on GitHub where the ARM templates and scripts will download other ARM templates and scripts
-gitrawurl='https://raw.githubusercontent.com/benjguin/db2onAzure/master/'
+gitrawurl='https://raw.githubusercontent.com/fcallander/db2-on-azure/master/'
 
 # Azure resource group where the Db2 setup will be deployed 
 rg="a_${dateid}"
@@ -68,8 +68,8 @@ acceleratedNetworkingOnDB2=true
 # do you want to use accelerated networking on other nodes (jumpbox, Windows and witness nodes)
 acceleratedNetworkingOnOthers=true
 
-# Number of Db2 members in the Db2 pureScale cluster. default is 2.
-nbDb2MemberVms=2
+# Number of Db2 members in the Db2 pureScale cluster. default is 3.
+nbDb2MemberVms=3
 
 # NB: the nbDb2CfVms variable is not set as the deployment as only been tested with the default value of 2, and more would not be supported. 
 

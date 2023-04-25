@@ -31,7 +31,7 @@
             "type": "string"
         },
         "nbDb2MemberVms": {
-            "defaultValue": 2,
+            "defaultValue": 3,
             "type": "int"
         },
         "nbDb2CfVms": {
@@ -223,14 +223,14 @@
             "scale": null,
             "properties": {
                 "hardwareProfile": {
-                    "vmSize": "Standard_DS2_v2"
+                    "vmSize": "Standard_DS2_v4"
                 },
                 "storageProfile": {
                     "imageReference": {
                         "publisher": "RedHat",
                         "offer": "RHEL",
-                        "sku": "7-RAW",
-                        "version": "7.5.2018042521"
+                        "sku": "86-gen2",
+                        "version": "latest"
                     },
                     "osDisk": {
                         "osType": "Linux",
@@ -244,7 +244,7 @@
                 },
                 "osProfile": {
                     "computerName": "jumpbox",
-                    "adminUsername": "rhel",
+                    "adminUsername": "psadmin",
                     "linuxConfiguration": {
                         "disablePasswordAuthentication": true,
                         "ssh": {
@@ -358,14 +358,14 @@
             "scale": null,
             "properties": {
                 "hardwareProfile": {
-                    "vmSize": "Standard_DS3_v2"
+                    "vmSize": "Standard_D8s_v4"
                 },
                 "storageProfile": {
                     "imageReference": {
                         "publisher": "RedHat",
                         "offer": "RHEL",
-                        "sku": "7.3",
-                        "version": "7.3.2017090723"
+                        "sku": "86-gen2",
+                        "version": "latest"
                     },
                     "osDisk": {
                         "osType": "Linux",
@@ -378,7 +378,7 @@
                 },
                 "osProfile": {
                     "computerName": "[concat('d', copyIndex())]",
-                    "adminUsername": "rhel",
+                    "adminUsername": "psadmin",
                     "linuxConfiguration": {
                         "disablePasswordAuthentication": true,
                         "ssh": {
@@ -515,14 +515,14 @@
             "scale": null,
             "properties": {
                 "hardwareProfile": {
-                    "vmSize": "Standard_DS3_v2"
+                    "vmSize": "Standard_D8s_v4"
                 },
                 "storageProfile": {
                     "imageReference": {
                         "publisher": "RedHat",
                         "offer": "RHEL",
-                        "sku": "7.3",
-                        "version": "7.3.2017090723"
+                        "sku": "86-gen2",
+                        "version": "latest"
                     },
                     "osDisk": {
                         "osType": "Linux",
@@ -535,7 +535,7 @@
                 },
                 "osProfile": {
                     "computerName": "[concat('cf', copyIndex())]",
-                    "adminUsername": "rhel",
+                    "adminUsername": "psadmin",
                     "linuxConfiguration": {
                         "disablePasswordAuthentication": true,
                         "ssh": {
@@ -672,8 +672,8 @@
                     "imageReference": {
                         "publisher": "RedHat",
                         "offer": "RHEL",
-                        "sku": "7-RAW",
-                        "version": "7.5.2018042521"
+                        "sku": "86-gen2",
+                        "version": "latest"
                     },
                     "osDisk": {
                         "osType": "Linux",
@@ -708,7 +708,7 @@
                 },
                 "osProfile": {
                     "computerName": "[concat('g', copyIndex())]",
-                    "adminUsername": "rhel",
+                    "adminUsername": "psadmin",
                     "linuxConfiguration": {
                         "disablePasswordAuthentication": true,
                         "ssh": {
@@ -839,14 +839,14 @@
             "scale": null,
             "properties": {
                 "hardwareProfile": {
-                    "vmSize": "Standard_DS3_v2"
+                    "vmSize": "Standard_D8s_v4"
                 },
                 "storageProfile": {
                     "imageReference": {
                         "publisher": "RedHat",
                         "offer": "RHEL",
-                        "sku": "7-RAW",
-                        "version": "7.5.2018042521"
+                        "sku": "86-gen2",
+                        "version": "latest"
                     },
                     "osDisk": {
                         "osType": "Linux",
@@ -860,7 +860,7 @@
                 },
                 "osProfile": {
                     "computerName": "witn0",
-                    "adminUsername": "rhel",
+                    "adminUsername": "psadmin",
                     "linuxConfiguration": {
                         "disablePasswordAuthentication": true,
                         "ssh": {
@@ -993,7 +993,7 @@
             "scale": null,
             "properties": {
                 "hardwareProfile": {
-                    "vmSize": "Standard_DS3_v2"
+                    "vmSize": "Standard_D4s_v4"
                 },
                 "storageProfile": {
                     "imageReference": {

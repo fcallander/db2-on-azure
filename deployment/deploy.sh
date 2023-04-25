@@ -33,14 +33,14 @@ declare location=""
 declare pubKeyPath=""
 declare adwinPassword=""
 declare db2bits=""
-declare gitrawurl=""
+declare gitrawurl="https://github.com/Azure/db2-on-azure/"
 declare jumpboxPublicName=""
 declare tempLocalFolder=""
 declare acceleratedNetworkingOnGlusterfs=""
 declare acceleratedNetworkingOnDB2=""
 declare acceleratedNetworkingOnOthers=""
 declare lisbits=""
-declare nbDb2MemberVms=2
+declare nbDb2MemberVms=3
 declare nbDb2CfVms=2
 
 # Initialize parameters specified from command line
